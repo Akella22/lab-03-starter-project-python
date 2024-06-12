@@ -7,7 +7,7 @@ ENV PATH="/.venv/bin:$PATH"
 COPY requirements/backend.in .
 RUN pip install -r backend.in
 
-FROM python:3.9-slim
+FROM python:3.9-alpine
 COPY --from=base /.venv /.venv
 ENV PATH="/.venv/bin:$PATH"
 COPY build build
